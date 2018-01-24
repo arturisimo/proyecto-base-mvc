@@ -46,16 +46,5 @@
      		<security:password-encoder hash="md5"/>
      	</security:authentication-provider>
 	</security:authentication-manager>
-     
-     <!-- start
-     <authentication-manager>
-	   <authentication-provider ref="ldapActiveDirectoryAuthProvider"/>
-	 </authentication-manager>
-	 
-	<bean id="ldapActiveDirectoryAuthProvider" class="org.springframework.security.ldap.authentication.ad.ActiveDirectoryLdapAuthenticationProvider">
-	<constructor-arg value="renfe"/>
-	<constructor-arg value="ldap://ldap.sir.renfe.es:339/" />
-	</bean>
-	-->
-	
+  
 </beans>

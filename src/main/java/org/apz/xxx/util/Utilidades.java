@@ -21,35 +21,6 @@ public class Utilidades {
 
 	protected static Logger logger = Logger.getLogger(Utilidades.class);
 	
-	/** Ruta del contexto de la aplicacion que se rellena en el InicioController para poder sustituir el texto CONTEXT_BD **/	
-	public static String PATHRAIZ;
-	
-	/** Se utiliza para guardar una referencia del contexto en BD, cuando se pinte se sustituira por el pathRaiz oportuno**/
-	public static final String CONTEXTO_BD = "#contexto#";
-	
-	public static String SERVER_NAME    = "NO_NAME";
-	
-	public static String QUARTZ_ACTIVE  = "0";
-	
-	public static String MAIL_XXX_FROM  = "xxxxx@renfe.es";
-	
-	public static String PATH_LOG4J	= "";
-	
-	/**
-	 *  Ruta a la carpeta raiz del repositorio de la aplicacion.
-	 *  Se setea en  listener de inicio leyendo la property "ruta.xxxxx"
-	 */
-	public static String RUTA_BASE;
-	
-	/**
-	 * Ruta de la carpeta de manuales en el servidor
-	 * */
-	public static String RUTA_MANUALES;
-	
-	/**
-	 *  Ruta base de la url de la aplicacion.   p.e http://localhost:8070/xxxxx/
-	 */
-	public static String URL_APP;
 	
 	/**
 	 * 

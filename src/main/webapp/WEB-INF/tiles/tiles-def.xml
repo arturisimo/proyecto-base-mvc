@@ -2,8 +2,6 @@
 <!DOCTYPE tiles-definitions PUBLIC "-//Apache Software Foundation//DTD Tiles Configuration 3.0//EN" "http://tiles.apache.org/dtds/tiles-config_3_0.dtd">
 <tiles-definitions> 
   
-
-	<!--  Plantilla abstracta general para la aplicacion  -->
 	<definition name="tiles.plantilla" template="/WEB-INF/jsp/layout/template.jsp">
 		<put-attribute name="header" value="tiles.header"/>
 		<put-attribute name="cabeceraPlantilla"	  value="/WEB-INF/jsp/include/cabecera.jsp" />

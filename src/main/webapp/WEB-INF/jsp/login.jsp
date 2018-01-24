@@ -1,14 +1,10 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%><%
-%><%-- TAGLIBS --%><% 
-%><%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %><%
-%><%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %><%
-%><%@ taglib prefix="tiles" uri="http://tiles.apache.org/tags-tiles" %><%
-%><%@ taglib prefix="spring" uri="http://www.springframework.org/tags"%><%
-%>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
+<%@ taglib prefix="tiles" uri="http://tiles.apache.org/tags-tiles" %>
+<%@ taglib prefix="spring" uri="http://www.springframework.org/tags"%>
 
 <div class="container row">
-
-
 	<c:if test="${not empty error}">
       	<div class="alert alert-warning alert-dismissible col-md-offset-4 col-md-4" role="alert" style="margin-top: 20px;margin-bottom: -25px;font-size: 11px;text-align: center;line-height: 18px;">
 	  		<button type="button" class="close" data-dismiss="alert"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>

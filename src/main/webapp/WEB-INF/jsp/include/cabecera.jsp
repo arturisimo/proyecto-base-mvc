@@ -33,7 +33,7 @@
        </ul>
        <ul class="nav navbar-nav pull-right">
         	 <li><a id="usuarioLogin" href="#"><i class="fa fa-user"></i> ${bUsuario.login}</a></li>
-        	 <li><a id="logout" href="#"><i class="fa fa-power-off "></i></a></li>
+        	 <li><a id="logout" href='<c:url value="/j_spring_security_logout"/>'><i class="fa fa-power-off "></i></a></li>
        	</ul>
      </div><!--/.nav-collapse -->
    </div>
