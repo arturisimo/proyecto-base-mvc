@@ -1,0 +1,190 @@
+/* Rastro Migas */
+
+.btn-breadcrumb .btn:not(:last-child):after {
+  content: " ";
+  display: block;
+  width: 0;
+  height: 0;
+  border-top: 11px solid transparent;
+  border-bottom: 11px solid transparent;
+  border-left: 10px solid white;
+  position: absolute;
+  top: 50%;
+  margin-top: -11px;
+  left: 100%;
+  z-index: 3;
+}
+.btn-breadcrumb .btn:not(:last-child):before {
+  content: " ";
+  display: block;
+  width: 0;
+  height: 0;
+  border-top: 11px solid transparent;
+  border-bottom: 11px solid transparent;
+  border-left: 10px solid rgb(173, 173, 173);
+  position: absolute;
+  top: 50%;
+  margin-top: -11px;
+  margin-left: 1px;
+  left: 100%;
+  z-index: 3;
+}
+
+/** The Spacing **/
+.btn-breadcrumb .btn {
+  padding: 3px 12px 3px 24px;
+	font-size: 11px;
+	line-height: 14px;
+}
+
+.btn-breadcrumb .btn:first-child {
+  padding:3px 6px 2px 10px;
+}
+.btn-breadcrumb .btn:last-child {
+  padding: 3px 18px 3px 24px;
+}
+
+/** Default button **/
+.btn-breadcrumb .btn.btn-default:not(:last-child):after {
+  border-left: 10px solid #fff;
+}
+.btn-breadcrumb .btn.btn-default:not(:last-child):before {
+  border-left: 10px solid #ccc;
+}
+.btn-breadcrumb .btn.btn-default:hover:not(:last-child):after {
+  border-left: 10px solid #ebebeb;
+}
+.btn-breadcrumb .btn.btn-default:hover:not(:last-child):before {
+  border-left: 10px solid #adadad;
+}
+
+/** Primary button **/
+.btn-breadcrumb .btn.btn-primary:not(:last-child):after {
+  border-left: 10px solid #428bca;
+}
+.btn-breadcrumb .btn.btn-primary:not(:last-child):before {
+  border-left: 10px solid #357ebd;
+}
+.btn-breadcrumb .btn.btn-primary:hover:not(:last-child):after {
+  border-left: 10px solid #3276b1;
+}
+.btn-breadcrumb .btn.btn-primary:hover:not(:last-child):before {
+  border-left: 10px solid #285e8e;
+}
+
+/** Success button **/
+.btn-breadcrumb .btn.btn-success:not(:last-child):after {
+  border-left: 10px solid #5cb85c;
+}
+.btn-breadcrumb .btn.btn-success:not(:last-child):before {
+  border-left: 10px solid #4cae4c;
+}
+.btn-breadcrumb .btn.btn-success:hover:not(:last-child):after {
+  border-left: 10px solid #47a447;
+}
+.btn-breadcrumb .btn.btn-success:hover:not(:last-child):before {
+  border-left: 10px solid #398439;
+}
+
+/** Danger button **/
+.btn-breadcrumb .btn.btn-danger:not(:last-child):after {
+  border-left: 10px solid #d9534f;
+}
+.btn-breadcrumb .btn.btn-danger:not(:last-child):before {
+  border-left: 10px solid #d43f3a;
+}
+.btn-breadcrumb .btn.btn-danger:hover:not(:last-child):after {
+  border-left: 10px solid #d2322d;
+}
+.btn-breadcrumb .btn.btn-danger:hover:not(:last-child):before {
+  border-left: 10px solid #ac2925;
+}
+
+/** Warning button **/
+.btn-breadcrumb .btn.btn-warning:not(:last-child):after {
+  border-left: 10px solid #f0ad4e;
+}
+.btn-breadcrumb .btn.btn-warning:not(:last-child):before {
+  border-left: 10px solid #eea236;
+}
+.btn-breadcrumb .btn.btn-warning:hover:not(:last-child):after {
+  border-left: 10px solid #ed9c28;
+}
+.btn-breadcrumb .btn.btn-warning:hover:not(:last-child):before {
+  border-left: 10px solid #d58512;
+}
+
+/** Info button **/
+.btn-breadcrumb .btn.btn-info:not(:last-child):after {
+  border-left: 10px solid #5bc0de;
+}
+.btn-breadcrumb .btn.btn-info:not(:last-child):before {
+  border-left: 10px solid #46b8da;
+}
+.btn-breadcrumb .btn.btn-info:hover:not(:last-child):after {
+  border-left: 10px solid #39b3d7;
+}
+.btn-breadcrumb .btn.btn-info:hover:not(:last-child):before {
+  border-left: 10px solid #269abc;
+}
+
+.btn-manual{
+  margin-left: 10px;
+  margin-bottom: 5px;
+  width: 30px;
+  top: -4px;
+  padding: 2px 8px 2px 8px;
+  line-height: 1.28 !important;
+  display: inline;
+}
+
+.btn-manual img{
+	width: 17px;
+}
+
+/*** Movil ***/
+
+@media 
+only screen and (max-width: 479px),
+(min-device-width: 0px) and (max-device-width: 479px)  {
+	
+	.btn-breadcrumb .btn {
+		padding: 1px 1px 1px 13px;
+/* 		font-size: 9px; */
+		line-height: 14px;
+	}
+	
+	.btn-breadcrumb .btn:first-child {
+	  	padding: 0px 0px 0px 4px;
+		height: 18px;
+	}
+	.btn-breadcrumb .btn:last-child {
+	  	padding: 1px 3px 1px 11px;
+	  	overflow: hidden;
+		text-overflow: ellipsis;
+		max-width: 90px;
+	}
+	
+	.btn-breadcrumb .btn:not(:last-child):after {
+	  	border-top: 8px solid transparent;
+	  	border-bottom: 8px solid transparent;
+	  	margin-top: -8px;
+	}
+	.btn-breadcrumb .btn:not(:last-child):before {
+	 	border-top: 8px solid transparent;
+	 	border-bottom: 8px solid transparent;
+	 	margin-top: -8px;
+	}
+
+.btn-manual{
+	float: right;
+	margin-left: 5px;
+	height: 20px;
+	width: 25px;
+	padding: 0px;
+	line-height: 1.28 !important;
+	margin-top: 1px;
+}
+	
+}
+

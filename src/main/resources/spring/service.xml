@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<beans 
+	xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+	
+	xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+					   http://www.springframework.org/schema/beans/spring-beans-4.0.xsd
+					   http://www.springframework.org/schema/context
+					   http://www.springframework.org/schema/context/spring-context-4.0.xsd">
+	 
+	<bean id="usuariosService" 		class="org.apz.xxx.service.impl.UsuariosServiceImpl"/>
+    <bean id="seguridadService" 	class="org.apz.xxx.service.impl.SeguridadServiceImpl"/>
+	<bean id="permisosService" 		class="org.apz.xxx.service.impl.PermisosServiceImpl"/>	
+	<bean id="rolesService" 		class="org.apz.xxx.service.impl.RolesServiceImpl"/>
+	<bean id="comunService" 		class="org.apz.xxx.service.impl.ComunServiceImpl"/>
+	
+</beans>  

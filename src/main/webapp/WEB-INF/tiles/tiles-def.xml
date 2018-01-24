@@ -1,0 +1,182 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE tiles-definitions PUBLIC "-//Apache Software Foundation//DTD Tiles Configuration 3.0//EN" "http://tiles.apache.org/dtds/tiles-config_3_0.dtd">
+<tiles-definitions> 
+  
+
+	<!--  Plantilla abstracta general para la aplicacion  -->
+	<definition name="tiles.plantilla" template="/WEB-INF/jsp/layout/template.jsp">
+		<put-attribute name="header" value="tiles.header"/>
+		<put-attribute name="cabeceraPlantilla"	  value="/WEB-INF/jsp/include/cabecera.jsp" />
+ 		<put-attribute name="menuMainOption"     cascade="true" value=""/>
+ 		<put-attribute name="menuSecondOption"   cascade="true" value=""/> 
+ 		<put-attribute name="menuThirdOption"    cascade="true" value=""/>
+		<put-attribute name="piePlantilla" value="/WEB-INF/jsp/include/pie.jsp"/>
+	</definition>
+	 
+	 
+	<definition name="tiles.header" template="/WEB-INF/jsp/layout/header-tiles.jsp">
+		<put-attribute name="nombre" value="valen"/>
+		<put-list-attribute name="cssfilesList">
+			<add-attribute value="/css/bootstrap/bootstrap.min.css" />
+			<add-attribute value="/css/navbar-top-fixed.css" />
+ 	   		<add-attribute value="/css/font-awesome.css" />
+		</put-list-attribute>
+		<put-list-attribute name="jsfilesList"> 
+ 			<add-attribute value="/js/jquery-1.11.0.min.js "/>
+			<add-attribute value="/js/bootstrap.min.js" />
+			<add-attribute value="/js/bootbox.min.js" />
+			<add-attribute value="/js/utilidades.js" />
+		</put-list-attribute> 
+		  
+ 		<put-list-attribute name="jsfilesList2"  cascade="true"/>  
+  		<put-list-attribute name="cssfilesList2" cascade="true"/>
+  		<put-list-attribute name="cssfilesListPrint" cascade="true"/> 
+   		<put-list-attribute name="ieJssfilesList" cascade="true"/> 
+   		
+   		<put-list-attribute name="cssLastfilesList">
+ 	   		<add-attribute value="/css/estilos.css" />
+ 	   		<add-attribute value="/css/breadcrumb.css" />
+	   	</put-list-attribute> 
+    </definition> 
+    
+    
+    <!-- ..............................................  -->
+	<!--  Plantilla   noNavBar -->
+	<!-- ..............................................  -->
+	<definition name="tiles.plantilla.noNavBar"		 
+				template="/WEB-INF/jsp/layout/plantilla_no_nav.jsp">
+		<put-attribute name="header"  value="tiles.header"/>
+	</definition>
+  
+	<!--  Login 							-->   										                
+	<!--  ................................. -->
+ 	<definition name="tiles.login" 		extends="tiles.plantilla.noNavBar"> 
+	
+    	<put-attribute name="zonaPrincipalPlantilla"	value="/WEB-INF/jsp/login.jsp" />
+    	  
+    	<put-list-attribute name="jsfilesList2" cascade="true">	</put-list-attribute>
+    	<put-list-attribute name="cssfilesList2" cascade="true"><add-attribute value="/css/estilos.css"/></put-list-attribute>
+    	 	  
+	   </definition>
+	
+    <!--  ................................. -->
+	<!--  Portada 							-->   										                
+	<!--  ................................. -->
+ 	<definition name="tiles.portada" 		extends="tiles.plantilla"> 
+	
+    	<put-attribute name="zonaPrincipalPlantilla"	value="/WEB-INF/jsp/portada.jsp" />
+    	  
+    	<put-list-attribute name="jsfilesList2" cascade="true">	</put-list-attribute>
+    	<put-list-attribute name="cssfilesList2" cascade="true"><add-attribute value="/css/estilos.css"/></put-list-attribute>
+    	 	  
+	</definition>
+	
+    <!--  ................................. -->
+	<!-- 			Monitorizar				-->   										                
+	<!--  ................................. -->
+	<definition name="tiles.xxxxx.monitorizar"		 		extends="tiles.plantilla">
+	
+    	<put-attribute name="zonaPrincipalPlantilla"		value="/WEB-INF/jsp/monitorizar.jsp"/>
+    	<put-attribute name="menuMainOption"     			cascade="true" value="INICIO"/>
+    	
+    	<put-list-attribute name="jsfilesList2" cascade="true">
+			<add-attribute value="/js/jquery-ui.js"/> 
+		</put-list-attribute>
+			
+		<put-list-attribute name="cssfilesList2" cascade="true">   
+			<add-attribute value="/css/jquery-ui.css"/>
+			<add-attribute value="/css/carrousel.css"/>
+			<add-attribute value="/css/portada.css"/>
+ 		</put-list-attribute>
+    </definition>
+      
+    <!--  ................................. -->
+	<!-- Error	  404						-->   										                
+	<!--  ................................. -->
+	<definition name="tiles.xxxxx.404" extends="tiles.plantilla">
+	
+    	<put-attribute name="zonaPrincipalPlantilla" value="/WEB-INF/jsp/404.jsp"/>
+    	
+    	<put-list-attribute name="jsfilesList2" cascade="true">
+			<add-attribute value="/js/jquery-ui.js"/> 
+		</put-list-attribute>
+			
+		<put-list-attribute name="cssfilesList2" cascade="true">   
+			<add-attribute value="/css/jquery-ui.css"/>
+ 		</put-list-attribute>
+    </definition>
+    
+    <!--  ................................. -->
+	<!-- Error	 							-->   										                
+	<!--  ................................. -->
+	<definition name="tiles.xxxxx.500" extends="tiles.plantilla">
+	
+    	<put-attribute name="zonaPrincipalPlantilla" value="/WEB-INF/jsp/error.jsp"/>
+    	
+    	<put-list-attribute name="jsfilesList2" cascade="true">
+			<add-attribute value="/js/jquery-ui.js"/> 
+		</put-list-attribute>
+			
+		<put-list-attribute name="cssfilesList2" cascade="true">   
+			<add-attribute value="/css/jquery-ui.css"/>
+ 		</put-list-attribute>
+    </definition>
+    
+    <!--  ................................. -->
+	<!-- Portada  							-->   										                
+	<!--  ................................. -->
+	<definition name="tiles.xxxxx.portada" 		extends="tiles.plantilla">
+	
+    	<put-attribute name="zonaPrincipalPlantilla" value="/WEB-INF/jsp/portada.jsp"/>
+    	<put-attribute name="menuMainOption"     cascade="true" value="INICIO"/>
+    	
+    	<put-list-attribute name="jsfilesList2" cascade="true">
+			<add-attribute value="/js/jquery-ui.js"/> 
+		</put-list-attribute>
+			
+		<put-list-attribute name="cssfilesList2" cascade="true">   
+			<add-attribute value="/css/jquery-ui.css"/>
+			<add-attribute value="/css/carrousel.css"/>
+			<add-attribute value="/css/portada.css"/>
+ 		</put-list-attribute>
+    </definition>
+    
+     <!--  ................................. -->
+	<!-- Administracion  					-->   										                
+	<!--  ................................. -->
+	<definition name="tiles.xxxxx.administracion" extends="tiles.plantilla">
+    	<put-attribute name="zonaPrincipalPlantilla" value="/WEB-INF/jsp/administracion/administracion.jsp" />
+    	
+    	<put-attribute name="menuMainOption" cascade="true" value="ADMINISTRACION"/> 
+    	
+    	<put-list-attribute name="cssfilesList2" cascade="true">
+    		<add-attribute value="/css/estilos.css"/>
+    	</put-list-attribute>
+    	
+    </definition>
+
+	
+	<definition name="tiles.listado" extends="tiles.plantilla">
+    	<put-attribute name="zonaPrincipalPlantilla" value="tiles.xxxxx.listado.body" />
+    	
+    	<put-list-attribute name="jsfilesList2" cascade="true">
+    			<add-attribute value="/js/jquery.datetimepicker.js"/>
+    			<add-attribute value="/js/jasny-bootstrap.min.js"/>
+    			<add-attribute value="/js/ap/roles.js"/>
+		</put-list-attribute>
+			
+		<put-list-attribute name="cssfilesList2" cascade="true">
+				<add-attribute value="/css/jasny-bootstrap.min.css"/>
+ 				<add-attribute value="/css/jquery.datetimepicker.css"/>
+ 		</put-list-attribute>
+ 		
+ 		
+    </definition>
+    
+    <definition name="tiles.xxxxx.listado.body" template="/WEB-INF/jsp/listado.jsp">
+    	<put-attribute name="listado-roles" value="/WEB-INF/jsp/administracion/include/listado-roles.jsp" />
+ 		<put-attribute name="listado-usuarios" value="/WEB-INF/jsp/administracion/include/listado-usuarios.jsp" />
+    </definition>
+    
+    
+</tiles-definitions>

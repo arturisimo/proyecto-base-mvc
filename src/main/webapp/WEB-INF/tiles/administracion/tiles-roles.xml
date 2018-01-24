@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE tiles-definitions PUBLIC "-//Apache Software Foundation//DTD Tiles Configuration 3.0//EN" "http://tiles.apache.org/dtds/tiles-config_3_0.dtd">
+<tiles-definitions>
+    <!--  ................................. -->
+	<!--  Administracion	-  Roles		-->   										                
+	<!--  ................................. -->
+	<definition name="tiles.xxxxx.administracion.roles.listado" extends="tiles.listado">
+    	<put-attribute name="menuMainOption" cascade="true" value="ADMINISTRACION"/> 
+    	<put-attribute name="menuSecondOption" cascade="true" value="ROLES"/>
+    </definition>
+	
+    <!--  ................................. -->
+	<!--  Administracion	- DETALLE ROL			-->   										                
+	<!--  ................................. -->
+	<definition name="tiles.xxxxx.administracion.roles.detalle" 			extends="tiles.plantilla">
+    	<put-attribute name="zonaPrincipalPlantilla"					value="tiles.xxxxx.administracion.roles.detalle.body"/>
+    	
+    	<put-attribute name="menuMainOption"	    cascade="true" value="ADMINISTRACION"/> 
+    	<put-attribute name="menuSecondOption"     	cascade="true" value="ROLES"/>
+    	<put-attribute name="menuThirdOption"    	cascade="true" value="DETALLE"/>
+    	
+    	<put-list-attribute name="jsfilesList2" cascade="true">
+    			<add-attribute value="/js/jquery.datetimepicker.js"/>
+    			<add-attribute value="/js/jasny-bootstrap.min.js"/>
+    			<add-attribute value="/js/jquery-treegrid/js/jquery.treegrid.js"/>
+    			<add-attribute value="/js/jquery-ui.js"/>
+    			<add-attribute value="/js/ap/roles.js"/>
+		</put-list-attribute>
+			
+		<put-list-attribute name="cssfilesList2" cascade="true">
+				<add-attribute value="/css/jasny-bootstrap.min.css"/>
+ 				<add-attribute value="/css/jquery.datetimepicker.css"/>
+ 				<add-attribute value="/js/jquery-treegrid/css/jquery.treegrid.css"/>
+ 				<add-attribute value="/css/jquery-ui.css"/>
+ 		</put-list-attribute>
+    </definition>
+    <!-- Zona Derecha ó Principal-->
+    <definition name="tiles.xxxxx.administracion.roles.detalle.body" template="/WEB-INF/jsp/administracion/roles/detalle_roles.jsp">
+    </definition>
+    
+    
+	<!--  ................................. -->
+	<!--  Administracion	- NUEVO ROL			-->   										                
+	<!--  ................................. -->
+	<definition name="tiles.xxxxx.administracion.roles.nuevo" 			extends="tiles.plantilla">
+    	<put-attribute name="zonaPrincipalPlantilla"					value="tiles.xxxxx.administracion.roles.nuevo.body"/>
+    	
+    	<put-attribute name="menuMainOption"	  cascade="true" value="ADMINISTRACION"/> 
+    	<put-attribute name="menuSecondOption"    cascade="true" value="ROLES"/>
+    	<put-attribute name="menuThirdOption"     cascade="true" value="ALTA"/>
+    	
+    	<put-list-attribute name="jsfilesList2" cascade="true">
+    			<add-attribute value="/js/jquery.datetimepicker.js"/>
+    			<add-attribute value="/js/jasny-bootstrap.min.js"/>
+    			<add-attribute value="/js/jquery-treegrid/js/jquery.treegrid.js"/>
+    			<add-attribute value="/js/ap/roles.js"/>
+		</put-list-attribute>
+			
+		<put-list-attribute name="cssfilesList2" cascade="true">
+				<add-attribute value="/css/jasny-bootstrap.min.css"/>
+ 				<add-attribute value="/css/jquery.datetimepicker.css"/>
+ 				<add-attribute value="/js/jquery-treegrid/css/jquery.treegrid.css"/>
+ 		</put-list-attribute>
+    </definition>
+    <!-- Zona Derecha ó Principal-->
+    <definition name="tiles.xxxxx.administracion.roles.nuevo.body" template="/WEB-INF/jsp/administracion/roles/alta_roles.jsp">
+    </definition>
+    
+    <!--  ................................. -->
+	<!-- Administracion	- EDITAR ROL		--> 										                
+	<!--  ................................. -->
+	<definition name="tiles.xxxxx.administracion.roles.editar" 	extends="tiles.plantilla">
+    	<put-attribute name="zonaPrincipalPlantilla"		value="tiles.xxxxx.administracion.roles.editar.body"/>
+    	
+    	<put-attribute name="menuMainOption"	    cascade="true" value="ADMINISTRACION"/> 
+    	<put-attribute name="menuSecondOption"     	cascade="true" value="ROLES"/>
+    	<put-attribute name="menuThirdOption"    	cascade="true" value="EDITAR"/>
+    	
+    	<put-list-attribute name="jsfilesList2" cascade="true">
+    			<add-attribute value="/js/jquery.datetimepicker.js"/>
+    			<add-attribute value="/js/jasny-bootstrap.min.js"/>
+    			<add-attribute value="/js/jquery-treegrid/js/jquery.treegrid.js"/>
+    			<add-attribute value="/js/ap/roles.js"/>
+		</put-list-attribute>
+			
+		<put-list-attribute name="cssfilesList2" cascade="true">
+				<add-attribute value="/css/jasny-bootstrap.min.css"/>
+ 				<add-attribute value="/css/jquery.datetimepicker.css"/>
+ 				<add-attribute value="/js/jquery-treegrid/css/jquery.treegrid.css"/>
+ 		</put-list-attribute>
+    </definition>
+    
+	<!-- Zona Derecha ó Principal-->
+    <definition name="tiles.xxxxx.administracion.roles.editar.body" template="/WEB-INF/jsp/administracion/roles/editar_roles.jsp">
+    </definition>
+    
+</tiles-definitions>    

@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE tiles-definitions PUBLIC "-//Apache Software Foundation//DTD Tiles Configuration 3.0//EN" "http://tiles.apache.org/dtds/tiles-config_3_0.dtd">
+<tiles-definitions>
+    <!--  ................................. -->
+	<!--  Administracion	-  Usuarios		-->   										                
+	<!--  ................................. -->
+	<definition name="tiles.xxxxx.administracion.usuarios.historicos" 			extends="tiles.plantilla">
+    	<put-attribute name="zonaPrincipalPlantilla"						value="tiles.xxxxx.administracion.usuarios.historicos.body"/>
+    	
+    	<put-attribute name="menuMainOption"	    cascade="true" value="ADMINISTRACION"/> 
+    	<put-attribute name="menuSecondOption"      cascade="true" value="USUARIOS"/>
+    	 
+    	<put-list-attribute name="jsfilesList2" cascade="true">
+    			<add-attribute value="/js/jquery.datetimepicker.js"/>
+    			<add-attribute value="/js/jasny-bootstrap.min.js"/>
+    			<add-attribute value="/js/ap//usuarios.js"/>
+		</put-list-attribute>
+			
+		<put-list-attribute name="cssfilesList2" cascade="true">
+				<add-attribute value="/css/jasny-bootstrap.min.css"/>
+ 				<add-attribute value="/css/jquery.datetimepicker.css"/>
+ 		</put-list-attribute>
+    	
+    </definition>
+	
+	<!-- Zona Derecha ó Principal-->
+    <definition name="tiles.xxxxx.administracion.usuarios.historicos.body" 
+    		template="/WEB-INF/jsp/administracion/usuarios/usuarios_historicos.jsp">
+    </definition>
+      
+    <!--  ................................. -->
+	<!--  Administracion	-  Usuarios		-->   										                
+	<!--  ................................. -->
+	<definition name="tiles.xxxxx.administracion.usuarios.listado" extends="tiles.listado">
+    	<put-attribute name="menuMainOption" cascade="true" value="ADMINISTRACION"/> 
+    	<put-attribute name="menuSecondOption" cascade="true" value="USUARIOS"/>
+    </definition>
+	
+    <!--  ......................................... -->
+	<!--  Administracion	-  	Detalle usuario		-->   										                
+	<!--  ......................................... -->
+	<definition name="tiles.xxxxx.administracion.usuarios.detalle" 			extends="tiles.plantilla">
+    	<put-attribute name="zonaPrincipalPlantilla"						value="tiles.xxxxx.administracion.usuarios.detalle.body"/>
+    	
+    	<put-attribute name="menuMainOption"	    cascade="true" value="ADMINISTRACION"/> 
+    	<put-attribute name="menuSecondOption"      cascade="true" value="USUARIOS"/>
+    	<put-attribute name="menuThirdOption"      	cascade="true" value="DETALLE"/>
+   
+    	<put-list-attribute name="jsfilesList2" cascade="true">
+    			<add-attribute value="/js/jquery.datetimepicker.js"/>
+    			<add-attribute value="/js/jasny-bootstrap.min.js"/>
+    			<add-attribute value="/js/jquery-treegrid/js/jquery.treegrid.js"/>
+    			<add-attribute value="/js/jquery-ui.js"/>
+    			<add-attribute value="/js/ap/usuarios.js"/>
+		</put-list-attribute>
+			
+		<put-list-attribute name="cssfilesList2" cascade="true">
+				<add-attribute value="/css/jasny-bootstrap.min.css"/>
+ 				<add-attribute value="/css/jquery.datetimepicker.css"/>
+ 				<add-attribute value="/js/jquery-treegrid/css/jquery.treegrid.css"/>
+ 				<add-attribute value="/css/jquery-ui.css"/>
+ 		</put-list-attribute>
+    	
+    </definition>
+	
+	<!-- Zona Derecha ó Principal-->
+    <definition name="tiles.xxxxx.administracion.usuarios.detalle.body" 
+    		template="/WEB-INF/jsp/administracion/usuarios/detalle_usuarios.jsp">
+    </definition>
+    
+	<!--  ................................. -->
+	<!--  Administracion	- NUEVO USUARIO			-->   										                
+	<!--  ................................. -->
+	<definition name="tiles.xxxxx.administracion.usuarios.nuevo" 			extends="tiles.plantilla">
+    	<put-attribute name="zonaPrincipalPlantilla"					value="tiles.xxxxx.administracion.usuarios.nuevo.body"/>
+    	
+    	<put-attribute name="menuMainOption"	    cascade="true" value="ADMINISTRACION"/> 
+    	<put-attribute name="menuSecondOption"     	cascade="true" value="USUARIOS"/>
+    	<put-attribute name="menuThirdOption"     	cascade="true" value="ALTA"/>
+    	
+    	<put-list-attribute name="jsfilesList2" cascade="true">
+    			<add-attribute value="/js/jquery.datetimepicker.js"/>
+    			<add-attribute value="/js/jasny-bootstrap.min.js"/>
+    			<add-attribute value="/js/ap/usuarios.js"/>
+		</put-list-attribute>
+			
+		<put-list-attribute name="cssfilesList2" cascade="true">
+				<add-attribute value="/css/jasny-bootstrap.min.css"/>
+ 				<add-attribute value="/css/jquery.datetimepicker.css"/>
+ 		</put-list-attribute>
+    </definition>
+    <!-- Zona Derecha ó Principal-->
+    <definition name="tiles.xxxxx.administracion.usuarios.nuevo.body" 
+    	template="/WEB-INF/jsp/administracion/usuarios/alta_usuarios.jsp">
+    </definition>
+    
+    <!--  ................................. -->
+	<!-- Administracion	- EDITAR USUARIO		--> 										                
+	<!--  ................................. -->
+	<definition name="tiles.xxxxx.administracion.usuarios.editar" 	extends="tiles.plantilla">
+    	<put-attribute name="zonaPrincipalPlantilla"		value="tiles.xxxxx.administracion.usuarios.editar.body"/>
+    	
+    	<put-attribute name="menuMainOption"	    cascade="true" value="ADMINISTRACION"/> 
+    	<put-attribute name="menuSecondOption"     cascade="true" value="USUARIOS"/>
+    	<put-attribute name="menuThirdOption"     cascade="true" value="EDITAR"/>
+    	
+    	<put-list-attribute name="jsfilesList2" cascade="true">
+    			<add-attribute value="/js/jquery.datetimepicker.js"/>
+    			<add-attribute value="/js/jasny-bootstrap.min.js"/>
+    			<add-attribute value="/js/ap/usuarios.js"/>
+		</put-list-attribute>
+			
+		<put-list-attribute name="cssfilesList2" cascade="true">
+				<add-attribute value="/css/jasny-bootstrap.min.css"/>
+ 				<add-attribute value="/css/jquery.datetimepicker.css"/>
+ 		</put-list-attribute>
+    </definition>
+    
+	<!-- Zona Derecha ó Principal-->
+    <definition name="tiles.xxxxx.administracion.usuarios.editar.body" 
+    template="/WEB-INF/jsp/administracion/usuarios/editar_usuarios.jsp">
+    </definition>
+    
+</tiles-definitions>    

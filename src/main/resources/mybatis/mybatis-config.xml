@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE configuration
+    PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+    "http://mybatis.org/dtd/mybatis-3-config.dtd">
+
+<configuration>
+
+	<typeAliases>
+		<typeAlias alias="Usuario" type="org.apz.xxx.beans.seguridad.UsuarioBean"/>
+		<typeAlias alias="Permiso" type="org.apz.xxx.beans.seguridad.PermisoBean"/>
+		<typeAlias alias="Rol" type="org.apz.xxx.beans.seguridad.RolBean"/>
+		<typeAlias alias="HistoricoUsuarios" type="org.apz.xxx.beans.seguridad.HistoricoUsuariosBean"/>
+		<typeAlias alias="GlobalAccion" type="org.apz.xxx.beans.comun.GlobalAccionBean"/>
+		<typeAlias alias="FiltroListado" type="org.apz.xxx.beans.comun.FiltroListado"/>
+	</typeAliases>    
+	
+</configuration> 
+	
+	
+	
+	

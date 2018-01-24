@@ -1,0 +1,61 @@
+<beans
+	xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:security="http://www.springframework.org/schema/security"
+    xmlns:context="http://www.springframework.org/schema/context"
+    xsi:schemaLocation="http://www.springframework.org/schema/beans 
+    					http://www.springframework.org/schema/beans/spring-beans-4.0.xsd
+			            http://www.springframework.org/schema/context 
+			            http://www.springframework.org/schema/context/spring-context-3.0.xsd
+                        http://www.springframework.org/schema/security 
+                        http://www.springframework.org/schema/security/spring-security-3.2.xsd">
+
+<security:http auto-config="true"  use-expressions="true">
+
+		
+		<security:intercept-url pattern="/img/**" 			access="permitAll"/>
+		<security:intercept-url pattern="/css/**" 			access="permitAll"/>
+		<security:intercept-url pattern="/js/**" 			access="permitAll"/>
+		<security:intercept-url pattern="/login"    		access="permitAll"/> 
+		<security:intercept-url pattern="/login/failed"   	access="permitAll"/>
+		<security:intercept-url pattern="/**"  	  	   		access="isAuthenticated()"/> 
+		
+		<security:form-login   
+		   	login-page="/login"
+		   	login-processing-url="/j_spring_security_check"
+  		   	default-target-url="/inicio" 
+  		   	always-use-default-target="true"
+          	authentication-failure-url="/login/failed"/>
+          	
+	</security:http> 
+    <bean id="authenticationManager" class="org.springframework.security.authentication.ProviderManager">
+        <property name="providers">
+            <list>
+                <bean id="daoAuthenticationProvider" class="org.springframework.security.authentication.dao.DaoAuthenticationProvider">
+			         <property name="userDetailsService" ref="userDetailsService" />
+			    </bean>
+            </list>
+        </property>
+    </bean>
+     
+     <bean id="userDetailsService" 
+     	    class="org.apz.xxx.service.impl.MyUserDetailsService"> </bean>
+    
+    <security:authentication-manager>
+     	<security:authentication-provider user-service-ref="userDetailsService">
+     		<security:password-encoder hash="md5"/>
+     	</security:authentication-provider>
+	</security:authentication-manager>
+     
+     <!-- start
+     <authentication-manager>
+	   <authentication-provider ref="ldapActiveDirectoryAuthProvider"/>
+	 </authentication-manager>
+	 
+	<bean id="ldapActiveDirectoryAuthProvider" class="org.springframework.security.ldap.authentication.ad.ActiveDirectoryLdapAuthenticationProvider">
+	<constructor-arg value="renfe"/>
+	<constructor-arg value="ldap://ldap.sir.renfe.es:339/" />
+	</bean>
+	-->
+	
+</beans>

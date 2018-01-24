@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+  
+<mapper namespace="org.apz.xxx.dao.seguridad.HistoricoUsuariosDao">
+
+
+	<resultMap id="resultHistUsuarios" type="HistoricoUsuarios">
+		<result property="id" 							column="ID"/>
+		<result property="nombre_usuario" 				column="NOMBRE_USUARIO"/>
+		<result property="fecha_accion" 				column="FECHA_ACCION"/>
+		<result property="nombre_usuario_accion" 		column="NOMBRE_USUARIO_ACCION"/>
+
+		<!-- bean permiso -->		
+		<association property="usuario"	  			javaType="Usuario">
+				<id 	property="id" 				column="HUSUARIO_ID"/>
+				<result property="nombre" 			column="HUSUARIO_NOMBRE"/>
+				<result property="login" 			column="HUSUARIO_LOGIN"/>
+		</association>
+
+		<!-- bean usuario -->		
+		<association property="usuario_accion"	  	javaType="Usuario">
+				<id 	property="id" 				column="USUARIO_ID"/>
+				<result property="nombre" 			column="USUARIO_NOMBRE"/>
+				<result property="login" 			column="USUARIO_LOGIN"/>
+		</association>
+		
+		<!-- bean accion global -->		
+		<association property="accion"	  			javaType="GlobalAccion">
+				<id 	property="id" 				column="ACCION_ID"/>
+				<result property="descripcion"		column="ACCION_DESCRIPCION"/>
+		</association>
+
+	</resultMap>
+	  
+	<!-- ..................................... -->
+	<!-- 	getAllHistoricoUsuarios			   -->
+	<!-- ..................................... -->
+	<select id="getAllHistoricoUsuarios"
+			parameterType="HistoricoUsuarios" 
+			resultMap="resultHistUsuarios">
+    	
+    	    SELECT 
+	    		h.id						AS 	ID,
+	    		h.nombre_usuario 			AS 	NOMBRE_USUARIO,
+	    		h.fecha_accion				AS 	FECHA_ACCION,
+	    		h.nombre_usuario_accion		AS 	NOMBRE_USUARIO_ACCION,
+	    		hu.id						AS  HUSUARIO_ID,
+	    		hu.nombre					AS  HUSUARIO_NOMBRE,
+	    		hu.login					AS  HUSUARIO_LOGIN,
+	    		u.id						AS  USUARIO_ID,
+	    		u.nombre					AS  USUARIO_NOMBRE,
+	    		u.login						AS  USUARIO_LOGIN,
+	    		a.id						AS  ACCION_ID,
+	    		a.descripcion				AS  ACCION_DESCRIPCION
+	    		
+    		FROM 
+    			<include refid="tablas.XXX_HIST_USUARIOS"/> h
+    			
+    			 LEFT OUTER JOIN 	<include refid="tablas.XXX_SEG_USUARIOS"/>  hu  ON  h.id_usuario = hu.id
+         	 	 	LEFT OUTER JOIN 	<include refid="tablas.XXX_SEG_USUARIOS"/>  u  ON  h.id_usuario_accion = u.id
+         	 	 			LEFT OUTER JOIN <include refid="tablas.XXX_GLOBAL_ACCIONES"/>  a  ON  h.id_global_accion = a.id		
+    			
+    		ORDER BY fecha_accion desc
+  	</select>
+  	
+  	<!-- ............................... -->  	
+	<!--   	insertHistoricoUsuarios		 -->
+	<!-- ............................... -->
+	<insert id="insertHistoricoUsuarios" parameterType="HistoricoUsuarios" >  
+    	
+	    INSERT INTO 
+	    		<include refid="tablas.XXX_HIST_USUARIOS"/>
+        		( 
+        			id_usuario,
+        			nombre_usuario,
+        			fecha_accion,
+        			nombre_usuario_accion,
+        			id_global_accion,
+        			id_usuario_accion
+        	 	 ) 
+        VALUES (
+        		 #{id_usuario:NUMERIC},
+        		 #{nombre_usuario:VARCHAR},
+        		 NOW(),
+        		 #{nombre_usuario_accion:VARCHAR},
+        		 #{id_accion:NUMERIC},
+        		 #{id_usuario_accion:NUMERIC}
+       		)
+	</insert> 
+  	
+
+</mapper>

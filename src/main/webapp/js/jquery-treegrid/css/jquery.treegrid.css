@@ -1,0 +1,27 @@
+.treegrid-indent {width:16px; height: 16px; float: left; display: inline-block; position: relative;}
+.treegrid-expander {width:16px; height: 16px; float: left; display: inline-block; position: relative; cursor: pointer;}
+
+.treegrid-expander-expanded{float:left; background-image: url(../img/collapse.png); }
+.treegrid-expander-collapsed{float:left;  background-image: url(../img/expand.png);}
+
+.tree-tr .treegrid-expander-expanded{top:7px;}
+.tree-tr .treegrid-expander-collapsed{top:7px;}
+
+.tree-tr {background-color:#fff !important}
+
+.tree-tr-detalle .treegrid-expander-expanded{top:0px;}
+.tree-tr-detalle .treegrid-expander-collapsed{top:0px;}
+
+.tree-tr-detalle {background-color:#fff !important; }
+
+.tree-tr-detalle td {padding-left: 4px !important;}
+
+.tree-checkbox{
+	float:left; 
+	margin-left: 4px;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	max-width: 190px;
+}
+
+
