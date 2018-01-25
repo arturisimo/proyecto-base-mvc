@@ -34,10 +34,6 @@ public class UsuariosServiceImpl implements UsuariosService,ConstantesGenerales 
 	@Autowired
 	HistoricoUsuariosDao  histUsuDao;                           
 	
-	//@Autowired
-	//PermisosService serv_perm;
-	
-
 	@Override
 	public List<UsuarioBean> getListadoUsuarios(FiltroListado filtro) {
 		return usuariosDao.getUsuarios(filtro);

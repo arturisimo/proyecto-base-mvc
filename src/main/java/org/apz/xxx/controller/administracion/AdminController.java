@@ -1,14 +1,14 @@
 package org.apz.xxx.controller.administracion;
 
-import java.util.Map;
-
 import javax.servlet.http.HttpServletRequest;
 
 import org.apz.xxx.beans.comun.FiltroListado;
+import org.apz.xxx.beans.seguridad.RolBean;
+import org.apz.xxx.beans.seguridad.UsuarioBean;
 import org.apz.xxx.service.def.AdminService;
-import org.apz.xxx.service.def.RolesService;
 import org.apz.xxx.service.def.UsuariosService;
 import org.apz.xxx.util.Utilidades;
+import org.apz.xxx.util.ConstantesGenerales.Modulo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -49,37 +49,56 @@ public class AdminController {
 		return mv;
     }
 	
-	  /****************************************************************************
-	  * Metodo controlador Listado de Administracion -> Usuarios -> Detalle
-	  * @param model
-	  * @param request
-	  * @param id
-	  * 
-	  * @return
-	  * @throws Exception
-	  **************************************************************************
-	 @RequestMapping(value = "/administracion/{modulo}/detalle/{idUsuario}/")
+	 @RequestMapping(value = "/{modulo}/{accion}/{idAdmin}")
 	 public ModelAndView detalle_usuario(
-		 Model model, @PathVariable("modulo") String modulo,
-		 @PathVariable("idUsuario") Long id) throws Exception  {
+		 Model model, @PathVariable("modulo") String modulo, @PathVariable("idAdmin") Long id,
+		 		@PathVariable("accion") String accion) throws Exception  {
 		 
-		 ModelAndView mv = new ModelAndView("tiles.xxxxx.administracion"+modulo+".detalle");
-		 
-	 	//Obtengo el usuario
-	 	Map<String,Object> parametros = usuariosService.getDetalleUsuario(id);
-	 	
-	 	//Muestro la vista
+		ModelAndView mv = new ModelAndView("tiles.xxxxx.administracion."+modulo+"."+accion);
 		
+		final FiltroListado filtro = new FiltroListado(Utilidades.MAP_MODULOS.get(modulo));
+		filtro.setId(id);
 		
-		mv.addObject("bUsu", parametros.get("bUsu"));
-		
-		mv.addObject("nodosRaices", parametros.get("nodosRaices"));
-		mv.addObject("arbolPermisos", parametros.get("arbolPermisos"));
-		mv.addObject("listaRoles", parametros.get("listaRoles"));
+		switch (filtro.getModulo()) {
+			case usuarios:
+				mv.addObject("roles", adminService.getListado(new FiltroListado(Modulo.roles)));
+				mv.addObject("detalle", adminService.getUsuarioDetalle(filtro));
+				break;
+	
+			case roles:
+				mv.addObject("detalle", adminService.getRolDetalle(filtro));
+				break;
+			
+			default:
+				break;
+		}
 		
 	 	return mv;
-	  }*/
+	  }
 	 
-
+	 @RequestMapping(value = "/{modulo}/alta")
+	 public ModelAndView detalle (
+		 Model model, @PathVariable("modulo") String modulo) throws Exception  {
+		 
+		ModelAndView mv = new ModelAndView("tiles.xxxxx.administracion."+modulo+".editar");
+		
+		final FiltroListado filtro = new FiltroListado(Utilidades.MAP_MODULOS.get(modulo));
+		
+		switch (filtro.getModulo()) {
+			case usuarios:
+				mv.addObject("detalle", new UsuarioBean());
+				mv.addObject("roles", adminService.getListado(new FiltroListado(Modulo.roles)));
+				break;
+	
+			case roles:
+				mv.addObject("detalle", new RolBean());
+				break;
+			
+			default:
+				break;
+		}
+		
+	 	return mv;
+	  }
 		
 }

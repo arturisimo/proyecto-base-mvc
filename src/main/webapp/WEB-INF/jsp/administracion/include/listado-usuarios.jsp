@@ -27,7 +27,7 @@
 	  							<c:choose>
 		  							<c:when test="${!usuario.borrado}">
 		  								<a id="btnDetalle" title="Detalle"
-								 			href="<c:url value="/administracion/${filtroListado.modulo}/detalle/${usuario.id}/"/>">
+								 			href="<c:url value="/admin/${filtroListado.modulo}/detalle/${usuario.id}/"/>">
 								 			<i class="fa fa-info"></i></a>
 								
 										<a id="btnModificar" title="Modificar"

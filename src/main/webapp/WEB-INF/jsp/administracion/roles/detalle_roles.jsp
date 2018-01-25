@@ -31,11 +31,11 @@
 						<tbody>
 							<tr>
 								<td class="td_th">Nombre</td>
-								<td><div>${bRol.nombre}</div></td>
+								<td><div>${detalle.nombre}</div></td>
 							</tr>
 							<tr>	
 								<td class="td_th">Descripción</td>
-								<td><div>${bRol.descripcion}</div></td>
+								<td><div>${detalle.descripcion}</div></td>
 							</tr>
 							</tbody>
 					</table>
@@ -79,60 +79,18 @@
 	<div class="col-md-12 form-group no-movil-padding" style="margin-top:15px; text-align: center;">
 		<div class="margeninferior">
 	
-			<a href="<c:url value='/administracion/roles/'/>" title="Volver al listado" class="titulosbotones3 btn btn-default bread-active colortext btn btn-default btn-lg active cancelar" >Volver al listado</a>
-			<a href="<c:url value='/administracion/roles/editar/${bRol.id}/'/>" title="Editar" class="titulosbotones3 btn btn-default bread-active colortext btn btn-default btn-lg active cancelar" >Editar</a>
+			<a href="<c:url value='/admin/roles/'/>" title="Volver al listado" class="titulosbotones3 btn btn-default bread-active colortext btn btn-default btn-lg active cancelar" >Volver al listado</a>
+			<a href="<c:url value='/admin/roles/editar/${detalle.id}/'/>" title="Editar" class="titulosbotones3 btn btn-default bread-active colortext btn btn-default btn-lg active cancelar" >Editar</a>
 			
 			<c:if test="${bRol.tipo == 0}">
 				<a  
 					title="Eliminar" 
 					class="delRol titulosbotonesDelete btn btn-default bread-active colortext btn btn-default btn-lg active cancelar"
 					id="delete_${bRol.id}"
-				 	href="<c:url value="/administracion/roles/eliminar/${bRol.id}/"/>">
+				 	href="<c:url value="/admin/roles/eliminar/${bRol.id}/"/>">
 				 	Eliminar</a>
 			 </c:if>
 		</div>
 	</div>
-	
-	<!-- ..................................... -->
-	<!-- Modal Confirmar eliminar Roles 	   -->
-	<!-- ..................................... -->
-	<div class="modal" id="myModalConfirmDeleteRol" 
-	  			tabindex="-1" role="dialog" 
-	  			aria-labelledby="myModalConfirmDeleteRol" 
-	  			aria-hidden="true">
-		<form
-	  		method="post"
-	  		id="fDelete"
-	  		action="<c:url value='/administracion/roles/eliminar/'/>"
-	  	>
-		  <input type="hidden" id="RolToDelete"/>
-		  	
-		  <div class="modal-dialog">
-		    <div class="modal-content">
-		      
-			      <div class="modal-header">
-			       	 <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-			       	 <h4 class="modal-title" id="myModalConfirmDeleteInciLabel">¿Eliminar rol?</h4>
-			      </div>
-		      
-			      <div class="modal-body"> 
-						
-						<label>${bRol.nombre}</label>
-						
-						<div class="row">
-							 
-							<%-- pie botones --%>
-							<div id="divEditarBotones1" class="modal-footer" style="border:none">
-			        			<button type="button" class="titulosbotones3 btn btn-default bread-active colortext btn btn-default btn-lg active cancelar" title="Cancelar" id="btnEditRol" data-dismiss="modal">Cancelar</button>
-			        			<button type="submit" id="btnAceptarEliminarRol" title="Eliminar el rol" data-dismiss="modal" class="titulosbotonesDelete btn btn-default bread-active colortext btn btn-default btn-lg active cancelar">Eliminar</button>
-			      			</div>
 		
-				      	</div>
-		    	  </div>
-		    </div>
-		  </div> 
-	  
-	 	 </form>
- 	 </div>
-	
 </div>

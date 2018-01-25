@@ -9,7 +9,7 @@ import javax.servlet.jsp.jstl.core.Config;
 
 import org.apache.log4j.Logger;
 import org.apz.xxx.beans.seguridad.UsuarioBean;
-import org.apz.xxx.service.def.SeguridadService;
+import org.apz.xxx.service.def.AdminService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;
@@ -25,20 +25,8 @@ public class InicioController {
 	private static Logger logger = Logger.getLogger(InicioController.class);
 
 	@Autowired
-	private SeguridadService seguridadService;
+	private AdminService adminService;
 	
-	/**
-	 *			 Controller de Inicio. 
-			
-					[from]: 	login.jsp
-					[to]: 	    inicio.jsp 
-						
-	 *
-	 * @param request
-	 * @param response
-	 * @return
-	 * @throws Exception 
-	 */
 	@RequestMapping({"/inicio", "/"})
 	public ModelAndView inicioConSpringAnterior(HttpServletRequest request, 
 												HttpSession session) throws Exception {
@@ -49,35 +37,28 @@ public class InicioController {
 		
 		Authentication auth = SecurityContextHolder.getContext().getAuthentication();
 		
-		UsuarioBean bUsuario = null;
+		UsuarioBean usuario = null;
 		
 		if (auth != null) {
 			
-			String sUserName =  auth.getName();
+			String login =  auth.getName();
 			
-			bUsuario = seguridadService.getUsuarioByLogin(sUserName);
+			usuario = adminService.getUsuarioByLogin(login);
 		
-			request.getSession().setAttribute("userPermissions", seguridadService.obtenerMapaPermisos(bUsuario));
-			
 			String lang = "es";
 			Locale loc = new Locale(lang);
 			Config.set(request.getSession(), Config.FMT_LOCALE, loc);
 			
-			request.getSession().setAttribute("bUsuario", bUsuario);
+			request.getSession().setAttribute("bUsuario", usuario);
 			
-			logger.debug("[] : " +bUsuario);
-			Long idUsuLogeado = bUsuario.getId();
+			logger.debug("login: " + usuario.getLogin());
 			
-			logger.debug("login: " + bUsuario.getLogin());
+			session.setAttribute("bUsuario", usuario);
 			
-			session.setAttribute("bUsuario", bUsuario);
-			session.setAttribute("idUsuLogeado", idUsuLogeado);
-			session.setAttribute("user_login", bUsuario.getLogin());
-			
-			logger.debug("[USuario_id] : " + bUsuario.getId());
+			logger.debug("[USuario_id] : " + usuario.getId());
 		}
 		else {
-			System.out.println("[auth]: null");
+			logger.error("[auth]: null");
 		}
 		
 		return mv;

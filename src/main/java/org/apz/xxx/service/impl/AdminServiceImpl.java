@@ -4,6 +4,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 import org.apz.xxx.beans.comun.FiltroListado;
+import org.apz.xxx.beans.seguridad.RolBean;
+import org.apz.xxx.beans.seguridad.UsuarioBean;
 import org.apz.xxx.dao.seguridad.RolDao;
 import org.apz.xxx.dao.seguridad.UsuariosDao;
 import org.apz.xxx.service.def.AdminService;
@@ -42,4 +44,21 @@ public class AdminServiceImpl implements AdminService, ConstantesGenerales {
 		return listado;
 	}
 
+
+	@Override
+	public UsuarioBean getUsuarioDetalle(FiltroListado filtro) {
+		return usuariosDao.getUsuarioById(filtro.getId());
+	}
+
+
+	@Override
+	public RolBean getRolDetalle(FiltroListado filtro) {
+		return rolDao.getRolById(filtro.getId());
+	}
+	
+	@Override
+	public UsuarioBean getUsuarioByLogin(String login) {
+		return usuariosDao.getUsuarioByLogin(login);
+	}
+	
 }

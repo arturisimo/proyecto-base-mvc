@@ -1,13 +1,13 @@
 ## Proyecto BASE MVC
 
-**Tecnología**
+**TecnologÃ­aa**
 
 * Spring 4 (MVC/Security) + Aoache Tiles
-* Mybatis 3.3.0
+* MyBatis 3.3.0
 * MySQL
 * jQuery (DOM) / bootbox
 * JDK8
 
-**Generación war**
+**GeneraciÃ³n war**
 
 	mvn clean install
