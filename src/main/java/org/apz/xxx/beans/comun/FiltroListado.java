@@ -8,6 +8,7 @@ public class FiltroListado implements Serializable, ConstantesGenerales {
 	
 	private static final long serialVersionUID = -4233056324659480894L;
 	
+	private Long id;
 	private Modulo modulo;
 	private String nombre;
 	private String login;
@@ -38,6 +39,14 @@ public class FiltroListado implements Serializable, ConstantesGenerales {
 
 	public void setModulo(Modulo modulo) {
 		this.modulo = modulo;
+	}
+
+	public Long getId() {
+		return id;
+	}
+
+	public void setId(Long id) {
+		this.id = id;
 	}
 
 	
