@@ -23,7 +23,7 @@
  			<add-attribute value="/js/jquery-1.11.0.min.js "/>
 			<add-attribute value="/js/bootstrap.min.js" />
 			<add-attribute value="/js/bootbox.min.js" />
-			<add-attribute value="/js/utilidades.js" />
+			<add-attribute value="/js/app/comun.js" />
 		</put-list-attribute> 
 		  
  		<put-list-attribute name="jsfilesList2"  cascade="true"/>  
@@ -41,53 +41,31 @@
     <!-- ..............................................  -->
 	<!--  Plantilla   noNavBar -->
 	<!-- ..............................................  -->
-	<definition name="tiles.plantilla.noNavBar"		 
-				template="/WEB-INF/jsp/layout/plantilla_no_nav.jsp">
+	<definition name="tiles.plantilla.noNavBar" template="/WEB-INF/jsp/layout/plantilla_no_nav.jsp">
 		<put-attribute name="header"  value="tiles.header"/>
 	</definition>
   
 	<!--  Login 							-->   										                
 	<!--  ................................. -->
  	<definition name="tiles.login" 		extends="tiles.plantilla.noNavBar"> 
-	
-    	<put-attribute name="zonaPrincipalPlantilla"	value="/WEB-INF/jsp/login.jsp" />
-    	  
+		<put-attribute name="zonaPrincipalPlantilla"	value="/WEB-INF/jsp/login.jsp" />
     	<put-list-attribute name="jsfilesList2" cascade="true">	</put-list-attribute>
-    	<put-list-attribute name="cssfilesList2" cascade="true"><add-attribute value="/css/estilos.css"/></put-list-attribute>
-    	 	  
-	   </definition>
+    	<put-list-attribute name="cssfilesList2" cascade="true">
+    		<add-attribute value="/css/estilos.css"/>
+    	</put-list-attribute>
+    </definition>
 	
     <!--  ................................. -->
 	<!--  Portada 							-->   										                
 	<!--  ................................. -->
  	<definition name="tiles.portada" 		extends="tiles.plantilla"> 
-	
-    	<put-attribute name="zonaPrincipalPlantilla"	value="/WEB-INF/jsp/portada.jsp" />
+		<put-attribute name="zonaPrincipalPlantilla"	value="/WEB-INF/jsp/portada.jsp" />
     	  
-    	<put-list-attribute name="jsfilesList2" cascade="true">	</put-list-attribute>
-    	<put-list-attribute name="cssfilesList2" cascade="true"><add-attribute value="/css/estilos.css"/></put-list-attribute>
+    	<put-list-attribute name="jsfilesList2" cascade="true"></put-list-attribute>
+    	<put-list-attribute name="cssfilesList2" cascade="true"></put-list-attribute>
     	 	  
 	</definition>
-	
-    <!--  ................................. -->
-	<!-- 			Monitorizar				-->   										                
-	<!--  ................................. -->
-	<definition name="tiles.xxxxx.monitorizar"		 		extends="tiles.plantilla">
-	
-    	<put-attribute name="zonaPrincipalPlantilla"		value="/WEB-INF/jsp/monitorizar.jsp"/>
-    	<put-attribute name="menuMainOption"     			cascade="true" value="INICIO"/>
-    	
-    	<put-list-attribute name="jsfilesList2" cascade="true">
-			<add-attribute value="/js/jquery-ui.js"/> 
-		</put-list-attribute>
-			
-		<put-list-attribute name="cssfilesList2" cascade="true">   
-			<add-attribute value="/css/jquery-ui.css"/>
-			<add-attribute value="/css/carrousel.css"/>
-			<add-attribute value="/css/portada.css"/>
- 		</put-list-attribute>
-    </definition>
-      
+	    
     <!--  ................................. -->
 	<!-- Error	  404						-->   										                
 	<!--  ................................. -->
@@ -96,12 +74,10 @@
     	<put-attribute name="zonaPrincipalPlantilla" value="/WEB-INF/jsp/404.jsp"/>
     	
     	<put-list-attribute name="jsfilesList2" cascade="true">
-			<add-attribute value="/js/jquery-ui.js"/> 
 		</put-list-attribute>
 			
 		<put-list-attribute name="cssfilesList2" cascade="true">   
-			<add-attribute value="/css/jquery-ui.css"/>
- 		</put-list-attribute>
+		</put-list-attribute>
     </definition>
     
     <!--  ................................. -->
@@ -112,12 +88,10 @@
     	<put-attribute name="zonaPrincipalPlantilla" value="/WEB-INF/jsp/error.jsp"/>
     	
     	<put-list-attribute name="jsfilesList2" cascade="true">
-			<add-attribute value="/js/jquery-ui.js"/> 
 		</put-list-attribute>
 			
 		<put-list-attribute name="cssfilesList2" cascade="true">   
-			<add-attribute value="/css/jquery-ui.css"/>
- 		</put-list-attribute>
+		</put-list-attribute>
     </definition>
     
     <!--  ................................. -->
@@ -129,17 +103,13 @@
     	<put-attribute name="menuMainOption"     cascade="true" value="INICIO"/>
     	
     	<put-list-attribute name="jsfilesList2" cascade="true">
-			<add-attribute value="/js/jquery-ui.js"/> 
 		</put-list-attribute>
 			
 		<put-list-attribute name="cssfilesList2" cascade="true">   
-			<add-attribute value="/css/jquery-ui.css"/>
-			<add-attribute value="/css/carrousel.css"/>
-			<add-attribute value="/css/portada.css"/>
- 		</put-list-attribute>
+		</put-list-attribute>
     </definition>
     
-     <!--  ................................. -->
+    <!--  ................................. -->
 	<!-- Administracion  					-->   										                
 	<!--  ................................. -->
 	<definition name="tiles.xxxxx.administracion" extends="tiles.plantilla">
@@ -148,7 +118,6 @@
     	<put-attribute name="menuMainOption" cascade="true" value="ADMINISTRACION"/> 
     	
     	<put-list-attribute name="cssfilesList2" cascade="true">
-    		<add-attribute value="/css/estilos.css"/>
     	</put-list-attribute>
     	
     </definition>
@@ -158,18 +127,12 @@
     	<put-attribute name="zonaPrincipalPlantilla" value="tiles.xxxxx.listado.body" />
     	
     	<put-list-attribute name="jsfilesList2" cascade="true">
-    			<add-attribute value="/js/jquery.datetimepicker.js"/>
-    			<add-attribute value="/js/jasny-bootstrap.min.js"/>
-    			<add-attribute value="/js/ap/roles.js"/>
+    		<add-attribute value="/js/ap/roles.js"/>
 		</put-list-attribute>
 			
 		<put-list-attribute name="cssfilesList2" cascade="true">
-				<add-attribute value="/css/jasny-bootstrap.min.css"/>
- 				<add-attribute value="/css/jquery.datetimepicker.css"/>
  		</put-list-attribute>
- 		
- 		
-    </definition>
+ 	</definition>
     
     <definition name="tiles.xxxxx.listado.body" template="/WEB-INF/jsp/listado.jsp">
     	<put-attribute name="listado-roles" value="/WEB-INF/jsp/administracion/include/listado-roles.jsp" />

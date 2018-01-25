@@ -33,8 +33,12 @@
        </ul>
        <ul class="nav navbar-nav pull-right">
         	 <li><a id="usuarioLogin" href="#"><i class="fa fa-user"></i> ${bUsuario.login}</a></li>
-        	 <li><a id="logout" href='<c:url value="/j_spring_security_logout"/>'><i class="fa fa-power-off "></i></a></li>
+        	 <li><a id="logout" href="#"><i class="fa fa-power-off "></i></a></li>
        	</ul>
+       	<ul id="userSession" class="usuario-menu list-group hidden">
+       		<li class="list-group-item"><a href="<c:url value="/admin/usuarios/detalle/${bUsuario.id}"/>">${bUsuario.login}</a></li>
+       		<li class="list-group-item"> xxxxxxxxxx </li>
+     	</ul>
      </div><!--/.nav-collapse -->
    </div>
  </nav>
