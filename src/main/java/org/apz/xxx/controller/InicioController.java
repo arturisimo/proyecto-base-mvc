@@ -19,7 +19,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 	
-@Controller 
+@Controller
 public class InicioController {
 
 	private static Logger logger = Logger.getLogger(InicioController.class);
@@ -53,7 +53,7 @@ public class InicioController {
 			
 			logger.debug("login: " + usuario.getLogin());
 			
-			session.setAttribute("bUsuario", usuario);
+			session.setAttribute("usuarioSession", usuario);
 			
 			logger.debug("[USuario_id] : " + usuario.getId());
 		}

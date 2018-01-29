@@ -32,12 +32,13 @@
       	</li>
        </ul>
        <ul class="nav navbar-nav pull-right">
-        	 <li><a id="usuarioLogin" href="#"><i class="fa fa-user"></i> ${bUsuario.login}</a></li>
+        	 <li><a id="usuarioLogin" href="#"><i class="fa fa-user"></i> ${usuarioSession.login}</a></li>
         	 <li><a id="logout" href="#"><i class="fa fa-power-off "></i></a></li>
        	</ul>
        	<ul id="userSession" class="usuario-menu list-group hidden">
-       		<li class="list-group-item"><a href="<c:url value="/admin/usuarios/detalle/${bUsuario.id}"/>">${bUsuario.login}</a></li>
-       		<li class="list-group-item"> xxxxxxxxxx </li>
+       		<li class="list-group-item"><strong><a href="<c:url value="/admin/usuarios/detalle/${usuarioSession.id}"/>">${usuarioSession.login}</strong></a></li>
+       		<li class="list-group-item">${usuarioSession.nombre}</li>
+     		<li class="list-group-item">${usuarioSession.email}</li>
      	</ul>
      </div><!--/.nav-collapse -->
    </div>

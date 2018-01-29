@@ -6,9 +6,8 @@ import org.apz.xxx.beans.comun.FiltroListado;
 import org.apz.xxx.beans.seguridad.RolBean;
 import org.apz.xxx.beans.seguridad.UsuarioBean;
 import org.apz.xxx.service.def.AdminService;
-import org.apz.xxx.service.def.UsuariosService;
-import org.apz.xxx.util.Utilidades;
 import org.apz.xxx.util.ConstantesGenerales.Modulo;
+import org.apz.xxx.util.Utilidades;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -16,23 +15,26 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.SessionAttributes;
 import org.springframework.web.servlet.ModelAndView;
 
 @Controller
 @RequestMapping(value = "/admin")
+@SessionAttributes("usuarioSession")
 public class AdminController {
 	
 	@Autowired
 	private AdminService adminService;
 	
 	@RequestMapping(value = "")
-	public ModelAndView aadmin(Model model, HttpServletRequest request) throws Exception {
+	public ModelAndView aadmin(Model model, @ModelAttribute("usuarioSession") UsuarioBean usuarioSession) throws Exception {
 		final ModelAndView mv = new ModelAndView("tiles.xxxxx.administracion");
 		return mv;
 	}
 	
 	@RequestMapping(value = "/{modulo}")
-	public ModelAndView usuarios(Model model, @PathVariable("modulo") String modulo) throws Exception {
+	public ModelAndView usuarios(Model model, @PathVariable("modulo") String modulo,
+			@ModelAttribute("usuarioSession") UsuarioBean usuarioSession) throws Exception {
 		
 		final ModelAndView mv = new ModelAndView("tiles.xxxxx.administracion."+modulo+".listado");
 		final FiltroListado filtro = new FiltroListado(Utilidades.MAP_MODULOS.get(modulo));
@@ -52,7 +54,7 @@ public class AdminController {
 	 @RequestMapping(value = "/{modulo}/{accion}/{idAdmin}")
 	 public ModelAndView detalle_usuario(
 		 Model model, @PathVariable("modulo") String modulo, @PathVariable("idAdmin") Long id,
-		 		@PathVariable("accion") String accion) throws Exception  {
+		 		@PathVariable("accion") String accion, @ModelAttribute("usuarioSession") UsuarioBean usuarioSession) throws Exception  {
 		 
 		ModelAndView mv = new ModelAndView("tiles.xxxxx.administracion."+modulo+"."+accion);
 		
@@ -78,7 +80,7 @@ public class AdminController {
 	 
 	 @RequestMapping(value = "/{modulo}/alta")
 	 public ModelAndView detalle (
-		 Model model, @PathVariable("modulo") String modulo) throws Exception  {
+		 Model model, @PathVariable("modulo") String modulo, @ModelAttribute("usuarioSession") UsuarioBean usuarioSession) throws Exception  {
 		 
 		ModelAndView mv = new ModelAndView("tiles.xxxxx.administracion."+modulo+".editar");
 		
