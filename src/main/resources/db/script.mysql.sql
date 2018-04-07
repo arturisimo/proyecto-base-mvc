@@ -87,17 +87,17 @@ Insert into XXX_GLOBAL_ACCIONES (ID,DESCRIPCION) values ('1','CREAR');
 Insert into XXX_GLOBAL_ACCIONES (ID,DESCRIPCION) values ('2','ELIMINAR');
 Insert into XXX_GLOBAL_ACCIONES (ID,DESCRIPCION) values ('3','MODIFICAR');
 
-Insert into XXX_SEG_PERMISOS (ID,NOMBRE,DESCRIPCION,PERMISO_PADRE) values ('2','Adminsitraci髇','Administraci髇','1');
-Insert into XXX_SEG_PERMISOS (ID,NOMBRE,DESCRIPCION,PERMISO_PADRE) values ('3','Administraci髇 Roles','Administraci髇 de Roles','2');
+Insert into XXX_SEG_PERMISOS (ID,NOMBRE,DESCRIPCION,PERMISO_PADRE) values ('2','Adminsitraci贸n','Administraci贸n','1');
+Insert into XXX_SEG_PERMISOS (ID,NOMBRE,DESCRIPCION,PERMISO_PADRE) values ('3','Administraci贸n Roles','Administraci贸n de Roles','2');
 Insert into XXX_SEG_PERMISOS (ID,NOMBRE,DESCRIPCION,PERMISO_PADRE) values ('1','Superadministrador','Superadministrador',null);
 
-Insert into XXX_SEG_ROLES (ID,NOMBRE,DESCRIPCION,BORRADO,TIPO) values ('1','ROL_ANONIMO','Rol que tendr醤 los usuarios por defecto','0','1');
+Insert into XXX_SEG_ROLES (ID,NOMBRE,DESCRIPCION,BORRADO,TIPO) values ('1','ROL_ANONIMO','Rol que tendr谩n los usuarios por defecto','0','1');
 Insert into XXX_SEG_ROLES (ID,NOMBRE,DESCRIPCION,BORRADO,TIPO) values ('3','ROL_INICIO','Da permiso a mostrar el Menu inicio','0','1');
 Insert into XXX_SEG_ROLES (ID,NOMBRE,DESCRIPCION,BORRADO,TIPO) values ('2','ROL_SUPERADMIN','Superadministrador','0','1');
 
 Insert into XXX_SEG_ROLES_PERMISOS (ID_ROL,ID_PERMISO) values ('2','1');
 
-Insert into XXX_SEG_USUARIOS (ID,NOMBRE,LOGIN,PASSWORD,BORRADO,CODIDIOMA,EMAIL,ACTUALIZADO,OCULTO) values ('1','Administrador','admin','21232f297a57a5a743894a0e4a801fc3','0','1','admin@renfe.es','1','0');
+Insert into XXX_SEG_USUARIOS (ID,NOMBRE,LOGIN,PASSWORD,BORRADO,CODIDIOMA,EMAIL,ACTUALIZADO,OCULTO) values ('1','Administrador','admin','21232f297a57a5a743894a0e4a801fc3','0','1','admin@xxxx.xx','1','0');
 
 Insert into XXX_SEG_USUARIOS_ROLES (ID_USUARIO,ID_ROL) values ('1','1');
 Insert into XXX_SEG_USUARIOS_ROLES (ID_USUARIO,ID_ROL) values ('1','2');
