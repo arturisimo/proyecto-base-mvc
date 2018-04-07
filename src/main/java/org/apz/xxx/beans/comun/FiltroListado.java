@@ -12,6 +12,11 @@ public class FiltroListado implements Serializable, ConstantesGenerales {
 	private Modulo modulo;
 	private String nombre;
 	private String login;
+	
+	
+	public FiltroListado() {
+		super();
+	}
 
 	public FiltroListado(Modulo modulo) {
 		this.modulo = modulo;

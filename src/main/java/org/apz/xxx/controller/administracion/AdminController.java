@@ -1,7 +1,5 @@
 package org.apz.xxx.controller.administracion;
 
-import javax.servlet.http.HttpServletRequest;
-
 import org.apz.xxx.beans.comun.FiltroListado;
 import org.apz.xxx.beans.seguridad.RolBean;
 import org.apz.xxx.beans.seguridad.UsuarioBean;

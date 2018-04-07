@@ -6,9 +6,10 @@
 
 <div id="principal" class="mt20 col-md-12">
 
-<c:set var="actionForm"><c:url value="/administracion/${filtroListado.modulo}/busqueda"/></c:set>
+<c:set var="actionForm"><c:url value="/admin/busqueda"/></c:set>
 
 <form:form cssClass="mt15 mb10 form-horizontal" modelAttribute="filtroListado" method="POST" action="${actionForm}">
+	<form:hidden path="modulo" cssStyle="form-control input-round" id="modulo" />
 		<div class="borde margin-top" > 
 			<div class="subtitulofiltros fondosubtitulos" style="float:left; display:block;">BÚSQUEDA DE ROLES</div>
 	

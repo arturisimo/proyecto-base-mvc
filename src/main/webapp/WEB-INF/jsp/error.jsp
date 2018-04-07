@@ -16,7 +16,7 @@
 			    <p>Se ha producido un error en la aplicación<br></p>
              
 				<c:if test="${not empty errMsg}">
-					<!-- Error: ${errMsg} -->
+					<pre>${errMsg}</pre>
 			    </c:if>	
 		
 	    	</div>
